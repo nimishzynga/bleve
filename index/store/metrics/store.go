@@ -86,6 +86,10 @@ func init() {
 	registry.RegisterKVStore(Name, New)
 }
 
+func (s *Store) GetKVStore() store.KVStore {
+    return s.o
+}
+
 func (s *Store) Close() error {
 	return s.o.Close()
 }

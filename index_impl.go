@@ -244,7 +244,7 @@ func openIndexUsing(path string, runtimeConfig map[string]interface{}) (rv *inde
 // Advanced returns implementation internals
 // necessary ONLY for advanced usage.
 func (i *indexImpl) Advanced() (index.Index, store.KVStore, error) {
-	return i.i, i.s, nil
+	return i.i, i.i.Advanced(), nil
 }
 
 // Mapping returns the IndexMapping in use by this

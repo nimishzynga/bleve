@@ -14,6 +14,7 @@ import (
 	"fmt"
 
 	"github.com/blevesearch/bleve/document"
+	"github.com/blevesearch/bleve/index/store"
 )
 
 var ErrorUnknownStorageType = fmt.Errorf("unknown storage type")
@@ -42,6 +43,7 @@ type Index interface {
 	Stats() json.Marshaler
 
 	Analyze(d *document.Document) *AnalysisResult
+    Advanced() store.KVStore
 }
 
 type IndexReader interface {
